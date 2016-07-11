@@ -1,0 +1,40 @@
+//
+//  JDPrefixHeader.pch
+//  JDWorkspace
+//
+//  Created by 金亮齐 on 16/6/30.
+//  Copyright © 2016年 醉看红尘这场梦. All rights reserved.
+//
+
+#ifndef JDPrefixHeader_pch
+#define JDPrefixHeader_pch
+
+
+#define USER_TABLE_SQL @"CREATE TABLE IF NOT EXISTS `user` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `user_id` VARCHAR(20) UNIQUE NOT NULL,`user_phone` VARCHAR(20) NOT NULL,`user_pwd` NOT NULL,`time` VARCHAR(20) NOT NULL,'user_name' VARCHAR(20) ,commodity,shop,record)"
+
+#define _LolitaFunctions [LolitaFunctions sharedObject]
+
+//导航栏标题字体大小
+#define JDNavigationFont [UIFont boldSystemFontOfSize:16]
+//颜色
+#define JDColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define rgba(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+
+//公用颜色
+#define JDCommonColor [UIColor colorWithRed:0.478 green:0.478 blue:0.478 alpha:1]
+
+//是否为iOS7
+#define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
+
+//是否为iOS8及以上系统
+#define iOS8 ([[UIDevice currentDevice].systemVersion doubleValue] >= 8.0)
+
+
+//日至输出
+#ifdef DEBUG
+#   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#   define DLog(...)
+#endif
+
+#endif /* JDPrefixHeader_pch */
